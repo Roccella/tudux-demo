@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#121212">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Tudux">
+  <link rel="manifest" href="/tudux-demo/manifest.json">
+  <link rel="apple-touch-icon" href="/tudux-demo/apple-touch-icon.png">
+  <link rel="preload" href="/tudux-demo/fonts/IBMPlexSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/tudux-demo/fonts/IBMPlexSans-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <title>Tudux - Hoy</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%239070D0'/%3E%3Cpath d='M0,10 V4 A4,4 0 0,1 4,0 H28 A4,4 0 0,1 32,4 V10 Z' fill='%237058A8'/%3E%3Crect x='3' y='13' width='26' height='16' rx='1.5' fill='white'/%3E%3Crect x='5' y='15' width='6' height='4.5' rx='0.5' fill='%23C89840'/%3E%3Crect x='13' y='15' width='6' height='4.5' rx='0.5' fill='%23C89840'/%3E%3Crect x='21' y='15' width='6' height='4.5' rx='0.5' fill='%239070D0'/%3E%3Crect x='5' y='22' width='6' height='4.5' rx='0.5' fill='%23C0A8E0'/%3E%3Crect x='13' y='22' width='6' height='4.5' rx='0.5' fill='%23C0A8E0'/%3E%3C/svg%3E">
+  <style>
+    #boot-splash {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #000;
+      z-index: 99999;
+      transition: opacity 0.2s ease;
+    }
+    #boot-splash .boot-spinner {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 3px solid rgba(255, 255, 255, 0.25);
+      border-top-color: #ffffff;
+      animation: bootSpin 0.8s linear infinite;
+      will-change: transform;
+    }
+    @keyframes bootSpin {
+      to { transform: rotate(360deg); }
+    }
+    #boot-splash.boot-splash-hide {
+      opacity: 0;
+      pointer-events: none;
+    }
+  </style>
+  <script type="module" crossorigin src="/tudux-demo/assets/index-CfL_x_uh.js"></script>
+  <link rel="stylesheet" crossorigin href="/tudux-demo/assets/index-3jyO6BFA.css">
+</head>
+<body>
+  <div id="boot-splash" aria-hidden="true">
+    <div class="boot-spinner"></div>
+  </div>
+  <div id="root"></div>
+  <script>
+    // Auto-reload on stale module errors (SW cache out of sync with deployed assets)
+    window.addEventListener('error', function(e) {
+      var msg = e.message || '';
+      if (msg.indexOf('Importing a module script failed') !== -1 ||
+          msg.indexOf('Failed to fetch dynamically imported module') !== -1 ||
+          msg.indexOf('error loading dynamically imported module') !== -1) {
+        var key = 'tudux-stale-reload';
+        try {
+          var last = sessionStorage.getItem(key);
+          var now = Date.now();
+          if (!last || now - parseInt(last, 10) > 30000) {
+            sessionStorage.setItem(key, String(now));
+            location.reload();
+          }
+        } catch(x) {}
+      }
+    });
+  </script>
+</body>
+</html>
