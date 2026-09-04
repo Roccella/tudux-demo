@@ -1,20 +1,11 @@
-# Tudux — demo
+# Tudux demo
 
-App personal de calendario y tareas estilo TeuxDeux. Offline-first, con
-recurrencia estilo Outlook y sync a un backend propio.
+Demo of Tudux, a calendar and productivity app.
 
-**Demo en vivo: https://roccella.github.io/tudux-demo/**
+Live at https://roccella.github.io/tudux-demo/
 
-El board arranca poblado con datos inventados y todo funciona: crear, editar,
-mover entre días, recurrencia, etiquetas, categorías, búsqueda y hábitos. Los
-cambios quedan en el navegador, en IndexedDB. "Restablecer demo" en Opciones
-vuelve al estado inicial.
+The board starts populated with made-up data. Everything runs in the browser, so
+there is no account and no backend.
 
-Lo que el demo no hace, porque no tiene backend: sync a la nube, integración con
-Google Calendar y notificaciones de Telegram.
-
-## Este repo es generado
-
-Solo contiene el build estático. No se edita a mano: cada deploy lo reemplaza
-entero. El código fuente vive en un repo privado, y `SOURCE.txt` dice de qué
-commit salió este build.
+This repo holds the built demo and nothing else. A deploy script replaces it on
+every release, so it is never edited by hand.
