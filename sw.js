@@ -1,4 +1,4 @@
-const SW_VERSION = '94a183e9a6';
+const SW_VERSION = 'c2b6dad382';
 // El SW se copia verbatim desde public/, así que Vite no le reescribe nada con base.
 // La saca de su propia URL: '/' en prod, '/tudux-demo/' servido bajo ese subpath.
 const BASE = new URL('./', self.location).pathname;
